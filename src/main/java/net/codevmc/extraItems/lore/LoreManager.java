@@ -1,6 +1,6 @@
-package net.codevmc.lore;
+package net.codevmc.extraItems.lore;
 
-import net.codevmc.ExtraItems;
+import net.codevmc.extraItems.ExtraItems;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;

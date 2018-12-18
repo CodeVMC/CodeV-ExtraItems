@@ -1,4 +1,4 @@
-package net.codevmc.item.serialization;
+package net.codevmc.extraItems.item.serialization;
 
 import java.util.HashMap;
 import java.util.Map;

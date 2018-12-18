@@ -1,8 +1,7 @@
-package net.codevmc.item.event;
+package net.codevmc.extraItems.item.event;
 
-import net.codevmc.item.skill.Skill;
+import net.codevmc.extraItems.item.skill.Skill;
 import org.bukkit.entity.Player;
-import org.bukkit.event.HandlerList;
 
 public class ExecuteSkillEvent extends SkillEvent{
     public ExecuteSkillEvent(Player who, Skill skill) {

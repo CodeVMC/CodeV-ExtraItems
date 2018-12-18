@@ -1,4 +1,4 @@
-package net.codevmc.lore;
+package net.codevmc.extraItems.lore;
 
 import org.bukkit.inventory.ItemStack;
 

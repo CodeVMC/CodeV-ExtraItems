@@ -1,4 +1,4 @@
-package net.codevmc.item.skill;
+package net.codevmc.extraItems.item.skill;
 
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;

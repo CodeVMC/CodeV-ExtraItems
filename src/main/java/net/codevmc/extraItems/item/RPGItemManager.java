@@ -1,14 +1,10 @@
-package net.codevmc.item;
+package net.codevmc.extraItems.item;
 
 import me.dpohvar.powernbt.PowerNBT;
 import me.dpohvar.powernbt.api.NBTCompound;
 import me.dpohvar.powernbt.api.NBTManager;
-import net.codevmc.item.condition.Condition;
-import net.codevmc.item.skill.Skill;
-import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;

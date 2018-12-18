@@ -1,4 +1,4 @@
-package net.codevmc;
+package net.codevmc.extraItems;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

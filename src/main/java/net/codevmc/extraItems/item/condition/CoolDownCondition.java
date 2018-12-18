@@ -1,8 +1,8 @@
-package net.codevmc.item.condition;
+package net.codevmc.extraItems.item.condition;
 
-import net.codevmc.item.event.ExecuteSkillEvent;
-import net.codevmc.item.serialization.SerializationHelper;
-import net.codevmc.item.skill.Skill;
+import net.codevmc.extraItems.item.serialization.SerializationHelper;
+import net.codevmc.extraItems.item.event.ExecuteSkillEvent;
+import net.codevmc.extraItems.item.skill.Skill;
 import org.bukkit.event.EventHandler;
 
 import java.util.Map;

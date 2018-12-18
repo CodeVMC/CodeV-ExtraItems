@@ -1,6 +1,6 @@
-package net.codevmc.item;
+package net.codevmc.extraItems.item;
 
-import net.codevmc.lore.Template;
+import net.codevmc.extraItems.lore.Template;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.Collection;

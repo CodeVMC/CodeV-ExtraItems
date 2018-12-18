@@ -1,7 +1,7 @@
-package net.codevmc.item.skill;
+package net.codevmc.extraItems.item.skill;
 
-import net.codevmc.item.RPGItemManager;
-import net.codevmc.item.event.ExecuteSkillEvent;
+import net.codevmc.extraItems.item.RPGItemManager;
+import net.codevmc.extraItems.item.event.ExecuteSkillEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerToggleSneakEvent;

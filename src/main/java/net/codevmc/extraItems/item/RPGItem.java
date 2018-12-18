@@ -1,9 +1,8 @@
-package net.codevmc.item;
+package net.codevmc.extraItems.item;
 
-import net.codevmc.item.serialization.SerializationHelper;
-import net.codevmc.item.skill.Skill;
+import net.codevmc.extraItems.item.serialization.SerializationHelper;
+import net.codevmc.extraItems.item.skill.Skill;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
-import org.bukkit.inventory.ItemStack;
 
 import java.util.*;
 import java.util.stream.Collectors;

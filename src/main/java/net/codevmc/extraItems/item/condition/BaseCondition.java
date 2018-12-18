@@ -1,4 +1,4 @@
-package net.codevmc.item.condition;
+package net.codevmc.extraItems.item.condition;
 
 public abstract class BaseCondition implements Condition{
 

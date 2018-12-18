@@ -1,7 +1,7 @@
-package net.codevmc.item.skill;
+package net.codevmc.extraItems.item.skill;
 
-import net.codevmc.item.condition.Condition;
-import net.codevmc.item.serialization.SerializationHelper;
+import net.codevmc.extraItems.item.condition.Condition;
+import net.codevmc.extraItems.item.serialization.SerializationHelper;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 
 import java.util.*;
