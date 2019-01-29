@@ -7,7 +7,7 @@ import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class ExtraItem implements ConfigurationSerializable {
+public class ExtraItem {
 
     private List<Skill> skillList = new ArrayList<>();
 
@@ -26,7 +26,6 @@ public class ExtraItem implements ConfigurationSerializable {
     public void removeSkill(Skill skill){
         this.skillList.remove(skill);
     }
-
     public Collection<Skill> getSkills(){
         return Collections.unmodifiableList(skillList);
     }
@@ -35,16 +34,8 @@ public class ExtraItem implements ConfigurationSerializable {
         //a rpgItem can exist two same skill
         return skillList
                 .stream()
-                .filter(skill -> skill.getSkillName().equals(skillName))
+                .filter(skill -> skill.skillName().equals(skillName))
                 .collect(Collectors.toList());
-    }
-
-    @Override
-    public Map<String, Object> serialize() {
-        return SerializationHelper
-                .helper()
-                .put(SKILL_LIST_KEY,skillList)
-                .build();
     }
 
     @Override

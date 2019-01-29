@@ -6,6 +6,6 @@ public interface Condition extends ConfigurationSerializable {
 
     boolean meet();
 
-    String ConditionName();
+    String conditionName();
 
 }

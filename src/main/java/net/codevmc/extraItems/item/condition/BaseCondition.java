@@ -6,10 +6,10 @@ public abstract class BaseCondition implements Condition{
         if((o instanceof Condition)) return false;
         if(o==null)return false;
         Condition otherCondition = (Condition) o;
-        return this.ConditionName().equals(otherCondition.ConditionName());
+        return this.conditionName().equals(otherCondition.conditionName());
     }
 
     public int hashCode(){
-        return this.ConditionName().hashCode();
+        return this.conditionName().hashCode();
     }
 }

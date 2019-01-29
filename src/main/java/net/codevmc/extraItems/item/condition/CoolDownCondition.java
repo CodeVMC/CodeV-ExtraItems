@@ -34,7 +34,7 @@ public class CoolDownCondition extends BaseCondition {
     public void onExecuteSkill(ExecuteSkillEvent event){
         long now = System.currentTimeMillis();
         Skill skill = event.getSkill();
-        for(Condition condition : skill.getCondition(this.ConditionName())){
+        for(Condition condition : skill.getCondition(this.conditionName())){
             CoolDownCondition coolDownCondition = (CoolDownCondition) condition;
             coolDownCondition.lastUseTime = now;
         }
@@ -58,7 +58,7 @@ public class CoolDownCondition extends BaseCondition {
     }
 
     @Override
-    public String ConditionName() {
+    public String conditionName() {
         return CONDITION_NAME;
     }
 

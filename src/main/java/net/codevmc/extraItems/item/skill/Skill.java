@@ -7,7 +7,7 @@ import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public abstract class Skill implements ConfigurationSerializable{
+public abstract class Skill{
 
     private ArrayList<Condition> conditions = new ArrayList<>();
 
@@ -30,6 +30,10 @@ public abstract class Skill implements ConfigurationSerializable{
         return true;
     }
 
+    public boolean hasCondition(String condition){
+        return false;
+    }
+
     public List<Condition> getConditionList(){
         return Collections.unmodifiableList(conditions);
     }
@@ -37,19 +41,11 @@ public abstract class Skill implements ConfigurationSerializable{
     public List<Condition> getCondition(String conditionName){
         return conditions
                 .stream()
-                .filter(condition -> condition.ConditionName().equals(conditionName))
+                .filter(condition -> condition.conditionName().equals(conditionName))
                 .collect(Collectors.toList());
     }
 
-    @Override
-    public Map<String, Object> serialize() {
-        return SerializationHelper
-                .helper()
-                .put(CONDITION_KEY,conditions)
-                .build();
-    }
-
-    public abstract String getSkillName();
+    public abstract String skillName();
 
     @Override
     public boolean equals(Object o) {

@@ -88,14 +88,4 @@ public abstract class PotionEffectSkill extends Skill{
         this.getPotionEffect().apply(player);
     }
 
-    @Override
-    public Map<String, Object> serialize() {
-        Map<String,Object> map = super.serialize();
-        map.put(DURATION_KEY,duration);
-        map.put(AMPLIFIER_KEY,amplifier);
-        map.put(AMBIENT_KEY,ambient);
-        map.put(PARTICLES_KEY,particles);
-        map.put(ICON_KEY,icon);
-        return map;
-    }
 }

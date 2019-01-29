@@ -26,7 +26,7 @@ public class SpeedPotionEffecthSkill extends PotionEffectSkill{
         if(!super.meetAllCondition())
             return;
         ExtraItemManager.getRPGItem(event.getPlayer().getInventory().getChestplate()).ifPresent(rpgItem -> {
-            Collection<Skill> skills = rpgItem.getSkill(getSkillName());
+            Collection<Skill> skills = rpgItem.getSkill(skillName());
             for(Skill skill : skills){
                 SpeedPotionEffecthSkill speedPotionEffecthSkill = (SpeedPotionEffecthSkill) skill;
                 ExecuteSkillEvent skillEvent = new ExecuteSkillEvent(event.getPlayer(),speedPotionEffecthSkill);
@@ -40,7 +40,7 @@ public class SpeedPotionEffecthSkill extends PotionEffectSkill{
 */
 
     @Override
-    public String getSkillName() {
+    public String skillName() {
         return "speed effect";
     }
 }
