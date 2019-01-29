@@ -9,26 +9,26 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class RPGItemManager {
+public class ExtraItemManager {
 
     private static NBTManager nbtManager = PowerNBT.getApi();
-    private static final String RPG_ITEM_KEY = "RPGItem";
+    private static final String RPG_ITEM_KEY = "ExtraItem";
 
-    private static HashMap<ItemStack,RPGItem> rpgItemHashMap = new HashMap<>();
+    private static HashMap<ItemStack, ExtraItem> rpgItemHashMap = new HashMap<>();
 
-    public static Optional<RPGItem> getRPGItem(ItemStack stack){
+    public static Optional<ExtraItem> getRPGItem(ItemStack stack){
         if(rpgItemHashMap.containsKey(stack))
             return Optional.of(rpgItemHashMap.get(stack));
         NBTCompound compound = nbtManager.read(stack);
         if(!compound.containsKey(RPG_ITEM_KEY))
             return Optional.empty();
         Map<String,Object> deserializeMap = (Map<String, Object>) compound.get(RPG_ITEM_KEY);
-        RPGItem rpgItem = new RPGItem(deserializeMap);
+        ExtraItem rpgItem = new ExtraItem(deserializeMap);
         rpgItemHashMap.put(stack,rpgItem);
         return Optional.of(rpgItem);
     }
 
-    public static void saveToItem(RPGItem rpgItem,ItemStack stack){
+    public static void saveToItem(ExtraItem rpgItem, ItemStack stack){
         nbtManager.write(stack,new NBTCompound(getRPGMap(rpgItem.serialize())));
     }
 

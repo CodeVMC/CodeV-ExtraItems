@@ -1,13 +1,7 @@
 package net.codevmc.extraItems.item.skill;
 
-import net.codevmc.extraItems.item.RPGItemManager;
-import net.codevmc.extraItems.item.event.ExecuteSkillEvent;
-import org.bukkit.Bukkit;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.potion.PotionEffectType;
 
-import java.util.Collection;
 import java.util.Map;
 
 public class SpeedPotionEffecthSkill extends PotionEffectSkill{
@@ -24,13 +18,14 @@ public class SpeedPotionEffecthSkill extends PotionEffectSkill{
         return PotionEffectType.SPEED;
     }
 
+    /*
     @EventHandler
     public void onPlayerSneak(PlayerToggleSneakEvent event){
         if(!event.isSneaking())
             return;
         if(!super.meetAllCondition())
             return;
-        RPGItemManager.getRPGItem(event.getPlayer().getInventory().getChestplate()).ifPresent(rpgItem -> {
+        ExtraItemManager.getRPGItem(event.getPlayer().getInventory().getChestplate()).ifPresent(rpgItem -> {
             Collection<Skill> skills = rpgItem.getSkill(getSkillName());
             for(Skill skill : skills){
                 SpeedPotionEffecthSkill speedPotionEffecthSkill = (SpeedPotionEffecthSkill) skill;
@@ -42,7 +37,7 @@ public class SpeedPotionEffecthSkill extends PotionEffectSkill{
             }
         });
     }
-
+*/
 
     @Override
     public String getSkillName() {

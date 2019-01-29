@@ -1,16 +1,16 @@
 package net.codevmc.extraItems.lore;
 
-import net.codevmc.extraItems.item.RPGItem;
+import net.codevmc.extraItems.item.ExtraItem;
 import net.codevmc.util.lore.Lore;
 
 import java.util.List;
 import java.util.Map;
 
-public class RPGItemLore implements Lore {
+public class ExtraItemLore implements Lore {
 
-    private RPGItem item;
+    private ExtraItem item;
 
-    public RPGItemLore(RPGItem item) {
+    public ExtraItemLore(ExtraItem item) {
         this.item = item;
     }
 

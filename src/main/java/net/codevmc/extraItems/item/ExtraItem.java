@@ -7,15 +7,15 @@ import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class RPGItem implements ConfigurationSerializable {
+public class ExtraItem implements ConfigurationSerializable {
 
     private List<Skill> skillList = new ArrayList<>();
 
     private static final String SKILL_LIST_KEY = "skillList";
 
-    public RPGItem(){}
+    public ExtraItem(){}
 
-    public RPGItem(Map<String,Object> map){
+    public ExtraItem(Map<String,Object> map){
         this.skillList = (List<Skill>) map.get(SKILL_LIST_KEY);
     }
 
@@ -51,7 +51,7 @@ public class RPGItem implements ConfigurationSerializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RPGItem rpgItem = (RPGItem) o;
+        ExtraItem rpgItem = (ExtraItem) o;
         return Objects.equals(skillList, rpgItem.skillList);
     }
 
