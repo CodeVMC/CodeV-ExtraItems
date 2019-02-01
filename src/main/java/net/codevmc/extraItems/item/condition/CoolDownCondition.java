@@ -62,14 +62,7 @@ public class CoolDownCondition extends BaseCondition {
         return CONDITION_NAME;
     }
 
-    @Override
-    public Map<String, Object> serialize() {
-        return SerializationHelper
-                .helper()
-                .put(LAST_USE_TIME_KEY,lastUseTime)
-                .put(COOL_DOWN_TIME_KEY,coolDownTime)
-                .build();
-    }
+
 
     @Override
     public boolean equals(Object o) {

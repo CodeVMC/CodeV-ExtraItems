@@ -1,5 +1,6 @@
 package net.codevmc.extraItems.item;
 
+import net.codevmc.extraItems.item.serialization.Serialization;
 import net.codevmc.extraItems.item.serialization.SerializationHelper;
 import net.codevmc.extraItems.item.skill.Skill;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
@@ -9,15 +10,10 @@ import java.util.stream.Collectors;
 
 public class ExtraItem {
 
+    @Serialization
     private List<Skill> skillList = new ArrayList<>();
 
-    private static final String SKILL_LIST_KEY = "skillList";
-
     public ExtraItem(){}
-
-    public ExtraItem(Map<String,Object> map){
-        this.skillList = (List<Skill>) map.get(SKILL_LIST_KEY);
-    }
 
     public void addSkill(Skill skill){
         skillList.add(skill);
@@ -31,7 +27,7 @@ public class ExtraItem {
     }
 
     public Collection<Skill> getSkill(String skillName){
-        //a rpgItem can exist two same skill
+        //a rpgItem can exist two or more same skill
         return skillList
                 .stream()
                 .filter(skill -> skill.skillName().equals(skillName))
@@ -50,4 +46,5 @@ public class ExtraItem {
     public int hashCode() {
         return Objects.hash(skillList);
     }
+
 }

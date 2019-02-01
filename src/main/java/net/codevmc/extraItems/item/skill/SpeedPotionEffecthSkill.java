@@ -9,10 +9,6 @@ public class SpeedPotionEffecthSkill extends PotionEffectSkill{
     public SpeedPotionEffecthSkill() {
     }
 
-    public SpeedPotionEffecthSkill(Map<String, Object> map) {
-        super(map);
-    }
-
     @Override
     public PotionEffectType getPotionEffectType() {
         return PotionEffectType.SPEED;

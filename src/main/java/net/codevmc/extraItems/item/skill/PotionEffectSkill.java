@@ -1,5 +1,6 @@
 package net.codevmc.extraItems.item.skill;
 
+import net.codevmc.extraItems.item.serialization.Serialization;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -8,12 +9,18 @@ import java.util.Map;
 
 public abstract class PotionEffectSkill extends Skill{
 
+    @Serialization
     private PotionEffect potionEffect;
 
+    @Serialization
     private int duration=10;
+    @Serialization
     private int amplifier=1;
+    @Serialization
     private boolean ambient=true;
+    @Serialization
     private boolean particles=true;
+    @Serialization
     private boolean icon=true;
 
     private static final String DURATION_KEY = "duration";
@@ -25,10 +32,6 @@ public abstract class PotionEffectSkill extends Skill{
     public abstract PotionEffectType getPotionEffectType();
 
     public PotionEffectSkill(){}
-
-    public PotionEffectSkill(Map<String, Object> map) {
-        super(map);
-    }
 
     public PotionEffect getPotionEffect(){
         if(potionEffect==null)

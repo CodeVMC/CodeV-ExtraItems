@@ -1,6 +1,7 @@
 package net.codevmc.extraItems.item.skill;
 
 import net.codevmc.extraItems.item.condition.Condition;
+import net.codevmc.extraItems.item.serialization.Serialization;
 import net.codevmc.extraItems.item.serialization.SerializationHelper;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 
@@ -9,15 +10,10 @@ import java.util.stream.Collectors;
 
 public abstract class Skill{
 
+    @Serialization
     private ArrayList<Condition> conditions = new ArrayList<>();
 
-    private static final String CONDITION_KEY = "conditions";
-
     public Skill(){}
-
-    public Skill(Map<String,Object> map){
-        this.conditions = (ArrayList<Condition>) map.get(CONDITION_KEY);
-    }
 
     public void addCondition(Condition condition) {
         this.conditions.add(condition);
@@ -43,6 +39,10 @@ public abstract class Skill{
                 .stream()
                 .filter(condition -> condition.conditionName().equals(conditionName))
                 .collect(Collectors.toList());
+    }
+
+    public void removeCondition(Condition condition){
+        conditions.remove(condition);
     }
 
     public abstract String skillName();
