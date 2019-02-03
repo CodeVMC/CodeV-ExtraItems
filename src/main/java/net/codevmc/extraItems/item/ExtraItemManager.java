@@ -39,7 +39,7 @@ public class ExtraItemManager {
         String deserializeString = compound.getString(EXTRA_ITEM_KEY);
         if(deserializeString==null)
             return null;
-        return SerializationHelper.deserialize(deserializeString);
+        return SerializationHelper.deserialize(new ExtraItem(),deserializeString);
     }
 
     public static void saveToItem(ExtraItem rpgItem, ItemStack stack){
