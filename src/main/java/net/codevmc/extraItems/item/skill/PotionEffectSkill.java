@@ -1,11 +1,9 @@
 package net.codevmc.extraItems.item.skill;
 
-import net.codevmc.extraItems.item.serialization.Serialization;
+import net.codevmc.util.serialization.Serialization;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-
-import java.util.Map;
 
 public abstract class PotionEffectSkill extends Skill{
 

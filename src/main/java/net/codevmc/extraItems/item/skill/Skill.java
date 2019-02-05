@@ -1,11 +1,12 @@
 package net.codevmc.extraItems.item.skill;
 
 import net.codevmc.extraItems.item.condition.Condition;
-import net.codevmc.extraItems.item.serialization.Serialization;
-import net.codevmc.extraItems.item.serialization.SerializationHelper;
-import org.bukkit.configuration.serialization.ConfigurationSerializable;
+import net.codevmc.util.serialization.Serialization;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public abstract class Skill{

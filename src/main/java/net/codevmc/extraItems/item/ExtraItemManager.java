@@ -3,7 +3,7 @@ package net.codevmc.extraItems.item;
 import me.dpohvar.powernbt.PowerNBT;
 import me.dpohvar.powernbt.api.NBTCompound;
 import me.dpohvar.powernbt.api.NBTManager;
-import net.codevmc.extraItems.item.serialization.SerializationHelper;
+import net.codevmc.util.serialization.SerializationHelper;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;
