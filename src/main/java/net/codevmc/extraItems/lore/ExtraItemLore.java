@@ -1,12 +1,11 @@
 package net.codevmc.extraItems.lore;
 
 import net.codevmc.extraItems.item.ExtraItem;
-import net.codevmc.util.lore.Lore;
+import net.codevmc.util.Item.lore.Lore;
 
 import java.util.List;
-import java.util.Map;
 
-public class ExtraItemLore implements Lore {
+public class ExtraItemLore extends Lore {
 
     private ExtraItem item;
 
@@ -15,8 +14,17 @@ public class ExtraItemLore implements Lore {
     }
 
     @Override
-    public List<String> get(Map<String, ?> map) {
+    public List<String> get() {
         return null;
     }
 
+    @Override
+    public void update() {
+        super.update();
+    }
+
+    @Override
+    public void asyncUpdate() {
+        super.asyncUpdate();
+    }
 }

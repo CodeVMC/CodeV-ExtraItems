@@ -29,16 +29,6 @@ public class CoolDownCondition extends BaseCondition {
         return coolDownTime< getPastTick();
     }
 
-    @EventHandler
-    public void onExecuteSkill(ExecuteSkillEvent event){
-        long now = System.currentTimeMillis();
-        Skill skill = event.getSkill();
-        for(Condition condition : skill.getCondition(this.conditionName())){
-            CoolDownCondition coolDownCondition = (CoolDownCondition) condition;
-            coolDownCondition.lastUseTime = now;
-        }
-    }
-
     public int getCoolDownTime() {
         return coolDownTime;
     }
@@ -60,8 +50,6 @@ public class CoolDownCondition extends BaseCondition {
     public String conditionName() {
         return CONDITION_NAME;
     }
-
-
 
     @Override
     public boolean equals(Object o) {

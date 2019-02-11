@@ -3,6 +3,7 @@ package net.codevmc.extraItems.item;
 import me.dpohvar.powernbt.PowerNBT;
 import me.dpohvar.powernbt.api.NBTCompound;
 import me.dpohvar.powernbt.api.NBTManager;
+import net.codevmc.util.Item.ItemUUID;
 import net.codevmc.util.serialization.SerializationHelper;
 import org.bukkit.inventory.ItemStack;
 
@@ -14,12 +15,11 @@ public class ExtraItemManager {
 
     private static NBTManager nbtManager = PowerNBT.getApi();
     private static final String EXTRA_ITEM_KEY = "ExtraItem";
-    private static final String EXTRA_ITEM_UUD_KEY = "ExtraItemUUID";
 
     private static HashMap<UUID, ExtraItem> EXTRA_ITEM_MAP = new HashMap<>();
 
     public static Optional<ExtraItem> getExtraItem(ItemStack stack){
-        Optional<UUID> uuid = getUUID(stack);
+        Optional<UUID> uuid = ItemUUID.getUUID(stack);
         if(uuid.isPresent()){
             if(EXTRA_ITEM_MAP.containsKey(uuid.get()))
                 return Optional.of(EXTRA_ITEM_MAP.get(uuid.get()));
@@ -48,25 +48,9 @@ public class ExtraItemManager {
             compound = new NBTCompound();
         compound.put(EXTRA_ITEM_KEY, SerializationHelper.serialize(rpgItem));
         nbtManager.write(stack,compound);
-        addUUID(stack);
+        ItemUUID.addUUID(stack);
     }
 
-    private static void addUUID(ItemStack stack){
-        NBTCompound compound = nbtManager.read(stack);
-        if(compound==null)
-            compound = new NBTCompound();
-        compound.put(EXTRA_ITEM_UUD_KEY, SerializationHelper.serialize(UUID.randomUUID().toString()));
-    }
-
-    private static Optional<UUID> getUUID(ItemStack stack){
-        NBTCompound compound = nbtManager.read(stack);
-        if(compound==null)
-            return Optional.empty();
-        String uuidString = compound.getString(EXTRA_ITEM_UUD_KEY);
-        if(uuidString==null)
-            return Optional.empty();
-        return Optional.of(UUID.fromString(uuidString));
-    }
 
 
 

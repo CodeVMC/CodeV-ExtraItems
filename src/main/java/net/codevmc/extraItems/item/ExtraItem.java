@@ -2,7 +2,6 @@ package net.codevmc.extraItems.item;
 
 import net.codevmc.extraItems.item.skill.Skill;
 import net.codevmc.util.serialization.Serialization;
-import org.bukkit.configuration.serialization.ConfigurationSerializable;
 
 import java.util.*;
 import java.util.stream.Collectors;
