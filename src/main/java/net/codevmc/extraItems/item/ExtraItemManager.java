@@ -1,9 +1,9 @@
 package net.codevmc.extraItems.item;
 
-import me.dpohvar.powernbt.PowerNBT;
 import me.dpohvar.powernbt.api.NBTCompound;
-import me.dpohvar.powernbt.api.NBTManager;
+import net.codevmc.extraItems.item.lore.ExtraItemLoreManager;
 import net.codevmc.util.Item.ItemUUID;
+import net.codevmc.util.nbt.NBTHelper;
 import net.codevmc.util.serialization.SerializationHelper;
 import org.bukkit.inventory.ItemStack;
 
@@ -13,7 +13,6 @@ import java.util.UUID;
 
 public class ExtraItemManager {
 
-    private static NBTManager nbtManager = PowerNBT.getApi();
     private static final String EXTRA_ITEM_KEY = "ExtraItem";
 
     private static HashMap<UUID, ExtraItem> EXTRA_ITEM_MAP = new HashMap<>();
@@ -33,25 +32,23 @@ public class ExtraItemManager {
     }
 
     private static ExtraItem deserializeFromStack(ItemStack stack) {
-        NBTCompound compound = nbtManager.read(stack);
-        if(compound==null)
-            return null;
+        NBTCompound compound = NBTHelper.getNBT(stack);
         String deserializeString = compound.getString(EXTRA_ITEM_KEY);
         if(deserializeString==null)
             return null;
         return SerializationHelper.deserialize(deserializeString);
     }
 
-    public static void saveToItem(ExtraItem rpgItem, ItemStack stack){
-        NBTCompound compound = nbtManager.read(stack);
-        if(compound==null)
-            compound = new NBTCompound();
-        compound.put(EXTRA_ITEM_KEY, SerializationHelper.serialize(rpgItem));
-        nbtManager.write(stack,compound);
+    public static void saveToItem(ItemStack stack,ExtraItem extraItem){
+        NBTCompound compound = NBTHelper.getNBT(stack);
+        compound.put(EXTRA_ITEM_KEY, SerializationHelper.serialize(extraItem));
+        NBTHelper.write(stack,compound);
         ItemUUID.addUUID(stack);
     }
 
-
-
+    public static void saveToItemAndBindLore(ItemStack stack,ExtraItem extraItem){
+        saveToItem(stack,extraItem);
+        ExtraItemLoreManager.bind(stack);
+    }
 
 }
