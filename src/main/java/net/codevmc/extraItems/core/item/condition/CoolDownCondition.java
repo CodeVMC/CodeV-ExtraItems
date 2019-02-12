@@ -1,8 +1,6 @@
-package net.codevmc.extraItems.item.condition;
+package net.codevmc.extraItems.core.item.condition;
 
-import net.codevmc.extraItems.item.event.ExecuteSkillEvent;
-import net.codevmc.extraItems.item.skill.Skill;
-import org.bukkit.event.EventHandler;
+import net.codevmc.extraItems.item.condition.BaseCondition;
 
 import java.util.Map;
 import java.util.Objects;
